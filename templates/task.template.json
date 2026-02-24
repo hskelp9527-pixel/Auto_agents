@@ -1,0 +1,197 @@
+{
+  "project": "[项目名称]",
+  "description": "[项目简短描述]",
+  "version": "1.0.0",
+  "created_at": "[创建日期]",
+  "tasks": [
+    {
+      "id": 1,
+      "title": "项目初始化和基础配置",
+      "description": "创建项目基础结构、配置开发工具",
+      "steps": [
+        "初始化 Git 仓库: git init",
+        "创建 .gitignore 文件",
+        "配置 ESLint",
+        "配置 Prettier",
+        "配置 TypeScript",
+        "创建基础目录结构"
+      ],
+      "passes": false,
+      "priority": "critical",
+      "dependencies": []
+    },
+    {
+      "id": 2,
+      "title": "环境配置和依赖安装",
+      "description": "配置开发环境和安装必要依赖",
+      "steps": [
+        "创建 package.json 或配置已有文件",
+        "安装项目依赖",
+        "创建 .env.example 环境变量模板",
+        "创建 init.sh 初始化脚本",
+        "验证开发服务器可以正常启动"
+      ],
+      "passes": false,
+      "priority": "critical",
+      "dependencies": [1]
+    },
+    {
+      "id": 3,
+      "title": "基础布局和路由配置",
+      "description": "创建应用的基础布局结构",
+      "steps": [
+        "创建 Layout 组件",
+        "创建 Header 组件",
+        "创建 Footer 组件（如需要）",
+        "配置路由系统",
+        "添加全局样式"
+      ],
+      "passes": false,
+      "priority": "critical",
+      "dependencies": [2]
+    },
+    {
+      "id": 4,
+      "title": "数据模型和类型定义",
+      "description": "定义数据结构和 TypeScript 类型",
+      "steps": [
+        "创建 types/ 目录",
+        "定义数据类型接口",
+        "创建 API 响应类型",
+        "定义常量和枚举"
+      ],
+      "passes": false,
+      "priority": "high",
+      "dependencies": [2]
+    },
+    {
+      "id": 5,
+      "title": "API 客户端封装",
+      "description": "创建 API 请求的封装函数",
+      "steps": [
+        "创建 api/ 目录",
+        "配置 axios 或 fetch 封装",
+        "实现请求拦截器",
+        "实现响应拦截器",
+        "实现错误处理"
+      ],
+      "passes": false,
+      "priority": "high",
+      "dependencies": [4]
+    },
+    {
+      "id": 6,
+      "title": "状态管理配置",
+      "description": "配置应用的状态管理（如需要）",
+      "steps": [
+        "创建 store/ 目录",
+        "配置状态管理库（Redux/Zustand/Pinia）",
+        "定义初始状态",
+        "创建 action/reducer 或 store",
+        "配置 Provider"
+      ],
+      "passes": false,
+      "priority": "medium",
+      "dependencies": [4]
+    },
+    {
+      "id": 7,
+      "title": "[具体功能1]",
+      "description": "[功能描述]",
+      "steps": [
+        "[步骤1]",
+        "[步骤2]",
+        "[步骤3]"
+      ],
+      "passes": false,
+      "priority": "high",
+      "dependencies": [5]
+    },
+    {
+      "id": 8,
+      "title": "[具体功能2]",
+      "description": "[功能描述]",
+      "steps": [
+        "[步骤1]",
+        "[步骤2]",
+        "[步骤3]"
+      ],
+      "passes": false,
+      "priority": "high",
+      "dependencies": [7]
+    },
+    {
+      "id": 9,
+      "title": "[具体功能3]",
+      "description": "[功能描述]",
+      "steps": [
+        "[步骤1]",
+        "[步骤2]",
+        "[步骤3]"
+      ],
+      "passes": false,
+      "priority": "medium",
+      "dependencies": [7]
+    },
+    {
+      "id": 10,
+      "title": "错误处理和边界情况",
+      "description": "添加错误处理和边界情况处理",
+      "steps": [
+        "创建错误边界组件",
+        "添加错误提示组件",
+        "处理空数据状态",
+        "处理加载失败情况",
+        "添加重试机制"
+      ],
+      "passes": false,
+      "priority": "medium",
+      "dependencies": [8, 9]
+    },
+    {
+      "id": 11,
+      "title": "加载状态和用户体验优化",
+      "description": "添加加载状态和优化用户体验",
+      "steps": [
+        "创建 Loading 组件",
+        "创建 Skeleton 骨架屏",
+        "添加过渡动画",
+        "优化表单体验",
+        "添加操作反馈"
+      ],
+      "passes": false,
+      "priority": "medium",
+      "dependencies": [8, 9]
+    },
+    {
+      "id": 12,
+      "title": "响应式设计适配",
+      "description": "适配不同屏幕尺寸",
+      "steps": [
+        "测试桌面端显示",
+        "测试平板端显示",
+        "测试移动端显示",
+        "调整响应式断点",
+        "优化移动端交互"
+      ],
+      "passes": false,
+      "priority": "medium",
+      "dependencies": [11]
+    },
+    {
+      "id": 13,
+      "title": "最终测试和优化",
+      "description": "完整流程测试和性能优化",
+      "steps": [
+        "运行 npm run lint 检查代码规范",
+        "运行 npm run build 确保构建成功",
+        "测试完整用户流程",
+        "检查控制台无错误",
+        "验证所有功能正常工作"
+      ],
+      "passes": false,
+      "priority": "critical",
+      "dependencies": [12]
+    }
+  ]
+}
